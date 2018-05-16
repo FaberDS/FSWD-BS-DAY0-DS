@@ -1,0 +1,109 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+            crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style>
+ #theprogressbar{
+  margin-top: 15vh;
+  margin-left: 3vw;
+ }
+</style>
+
+</head>
+<body>
+<div class="container-fluid">
+
+<div class="progress" id="theprogressbar">
+  <div id="myprogressbar" class="progress-bar" role="progressbar" aria-valuenow="60"
+  aria-valuemin="0" aria-valuemax="100" style="width:60%">
+    <span >60% Complete</span>
+  </div>
+</div>
+<div class="progress">
+  <div id="progressbar1" class="progress-bar" role="progressbar" aria-valuenow="60"
+  aria-valuemin="0" aria-valuemax="100" >
+    <span id="progressspan1">60% Complete</span>
+  </div>
+</div>
+<div class="progress">
+  <div id="progressbar2" class="progress-bar" role="progressbar" aria-valuenow="60"
+  aria-valuemin="0" aria-valuemax="100" >
+    <span id="progressspan2">60% Complete</span>
+  </div>
+</div>
+<div class="progress">
+  <div id="progressbar3" class="progress-bar" role="progressbar" aria-valuenow="60"
+  aria-valuemin="0" aria-valuemax="100" >
+    <span id="progressspan3">60% Complete</span>
+  </div>
+</div>
+<div class="progress">
+  <div id="progressbar4" class="progress-bar" role="progressbar" aria-valuenow="60"
+  aria-valuemin="0" aria-valuemax="100" >
+    <span id="progressspan4">60% Complete</span>
+  </div>
+</div>
+<div class="progress">
+  <div id="progressbar5" class="progress-bar" role="progressbar" aria-valuenow="60"
+  aria-valuemin="0" aria-valuemax="100" >
+    <span id="progressspan5">60% Complete</span>
+  </div>
+</div>
+
+
+	
+<div id="fivebars">
+</div>
+
+</div>
+<script>
+var bars=[7,13,19,23,29];
+
+function initProgressBars(){
+ for(var i=0;i<5;++i){
+  var id="#progressbar"+(i+1);
+  var span="#progressspan"+(i+1);
+  //$(id).attr('aria-valuenow',bars[i]);
+  var v=bars[i];
+  console.log(id+" "+v);
+  
+  $(id).css('width',v+'%');//
+  
+  $(id).attr('aria-valuenow', v);  
+  $(span).text(bars[i]);
+ }
+ console.log('progressbars initiated');
+}
+
+initProgressBars();
+setInterval(function(){
+ for(var i=1;i<=5;++i)
+  {var id="#progressbar"+i;
+   var span="#progressspan"+i;
+   bars[i-1]+=5;
+   if(bars[i-1]<=100)
+    {$(id).css('width',bars[i-1]+'%').attr('aria-valuenow',bars[i]);
+     $(span).text(bars[i-1]);
+    }
+   else
+    {$(id).css('width','100%').attr('aria-valuenow',100);
+     $(span).text(100);
+    }
+  }
+},2000);
+</script>
+
+</body>	
+</html>

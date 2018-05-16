@@ -1,0 +1,44 @@
+
+.white{
+ background-color: white;
+}
+
+.nothing{
+ background-color: transparent;
+}
+
+#rowOne{
+ background-color: red;
+ padding: 2em;
+}
+
+#rowTwo{
+ background-color: yellow;
+ padding: 2em;
+}
+
+#rowThree{
+ background-color: grey;
+ padding: 1em;
+}
+
+
+#fake{
+ 
+ background-color: grey;
+ 
+}
+
+.more{
+ margin-left: 1em;
+}
+
+.muchmore{
+ margin-left: 6em;
+}
+
+h1{
+ color: red;
+ margin: 1vh;
+ text-align: center;
+}
